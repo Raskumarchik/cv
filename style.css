@@ -13,36 +13,31 @@ body{
     top: 5px ;
     padding-left: 25px; /*для сдвига всех элементов в блоке*/
     padding-top: 70px; 
-
 }
 
-main{
+.main{
     line-height: 10px; /*межстрочный интервал*/
     color: rgb(255, 255, 255);
 }
 
-p{
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-}
-
-img{
+.img_1{
     border: 5px solid rgb(2, 163, 136);
 }
 
-article {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    word-spacing: 15px ;/**/   
+.type_contacts {
+    position: absolute;
+    line-height: 30px; /*межстрочный интервал*/
+    color: rgb(255, 255, 255);
+    font-size: 12px;   
 }
-aside {
 
+.contacts {
     width: 600px;
     float: right;
     line-height: 30px;
-
+    line-height: 30px; /*межстрочный интервал*/
+    color: rgb(255, 255, 255);
+    font-size: 12px;
 }
 
 .vertical_line{
@@ -51,6 +46,5 @@ aside {
     background-color: rgb(58, 57, 57);
     margin-left: 300px; /*Центр*/
     transform: rotate(180deg);    /*Повернуть вертикально */
-    transform: translateY(-370px);
-
+    transform: translateY(-226px);
 }
