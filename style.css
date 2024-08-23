@@ -5,39 +5,57 @@ body{
 
 .block {
     width: 37%;
-    height: 880px;  /* почему нельзя поставить 100% ? */
+    height: 93vh;  /* почему нельзя поставить 100% ? */
     background:rgb(44, 43, 43);
     position: relative;
     margin-left: auto;  /* найти центр блока */
     margin-right: auto;
     top: 5px ;
-    padding-left: 25px; /*для сдвига всех элементов в блоке*/
-    padding-top: 70px; 
+    padding-left: 20px; /*для сдвига всех элементов в блоке*/
+    padding-top: 40px; 
 }
 
 .main{
     line-height: 10px; /*межстрочный интервал*/
     color: rgb(255, 255, 255);
+    margin-right: 420px;
+    border: 1px solid red;
+    
 }
 
+.img_1:hover{
+    transform: scale(1.5); 
+    border: 5px solid rgb(43, 204, 177);
+
+}
 .img_1{
-    border: 5px solid rgb(2, 163, 136);
+    border: 5px solid rgb(43, 204, 177);
+    transition: transform 0.5s;
+    border: 1px solid red;
+
 }
 
 .type_contacts {
     position: absolute;
     line-height: 30px; /*межстрочный интервал*/
     color: rgb(255, 255, 255);
-    font-size: 12px;   
+    font-size: 12px;  
+    transition: 0.2s; 
+    border: 1px solid red;
 }
 
 .contacts {
-    width: 600px;
+    margin-right:420px;
+    transition: transform 0.5s;
     float: right;
-    line-height: 30px;
     line-height: 30px; /*межстрочный интервал*/
     color: rgb(255, 255, 255);
     font-size: 12px;
+    border: 1px solid red;
+}
+
+.contacts:hover{
+    transform: scale(1.1); 
 }
 
 .vertical_line{
@@ -46,5 +64,175 @@ body{
     background-color: rgb(58, 57, 57);
     margin-left: 300px; /*Центр*/
     transform: rotate(180deg);    /*Повернуть вертикально */
-    transform: translateY(-226px);
+    transform: translateY(-600px);
+}
+
+.profile_information{
+    margin-top: 10px;
+    line-height: 30px; /*межстрочный интервал*/
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 16px;
+    margin-right:420px;
+    border: 1px solid red;
+}
+.profile{
+    margin-top: 130px;
+    margin-right:420px;
+    color: rgb(255, 255, 255);
+    border: 1px solid red; 
+ 
+     
+}
+.gorizont_line{
+    width:70px;
+    border-bottom:4px solid rgb(43, 204, 177);
+    border-radius: 5px;
+
+}
+
+.container{
+    margin-right:420px;
+    margin-top: 5px;
+    grid-template-columns:minmax(25px, 290px);/*размер колонок*/
+    display: grid;
+    grid-auto-rows:minmax(1px, auto) ;
+    border: 1px solid red;
+}
+
+.items{
+
+    color: rgb(255, 255, 255);
+}
+
+.item_2{
+    width:70px;
+    border-bottom:4px solid rgb(43, 204, 177);
+    border-radius: 5px;
+    
+}
+
+.container_2{
+    margin-top: 25px;
+    grid-template-columns: 125px 145px;/*размер колонок*/
+    grid-auto-rows: 30px;/*размер для незаданных строк */
+    display: grid;
+    margin-right:420px;
+    border: 1px solid red;
+}
+
+.item{
+    color: rgb(255, 255, 255);
+   
+
+}
+
+.item_4{
+
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 gray,
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.item_6{
+    background-color: rgb(44, 43, 43);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 gray,
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.item_8{
+    background-color: rgb(44, 43, 43);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 rgb(43, 204, 177),
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.item_10{
+    background-color: rgb(44, 43, 43);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 gray,
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.item_12{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 gray,
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.item_14{
+    background-color: rgb(44, 43, 43);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
+                40px 0px 0 0 gray,
+                65px 0px 0 0 gray,
+                90px 0px 0 0 gray,
+                115px 0px 0 0 gray;
+}
+
+.experience{
+    color: rgb(255, 255, 255);
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    display: grid;
+    justify-content: start;
+    margin-top: -930px;
+    margin-right: 20px;
+    margin-left: 310px; 
+    border: 3px solid rgb(24, 15, 138); 
+     
+
+}
+
+.item_16{
+    width:70px;
+    border-bottom:4px solid rgb(43, 204, 177);
+    border-radius: 5px;
+
+}
+
+.item_17{
+    font-size: 12px;
+    border: 1px solid rgb(17, 79, 136);
+}
+
+.exp{
+    
+    color: rgb(255, 255, 255);
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    justify-content: start;
+    display: grid;
+    margin-top: 1%;
+    margin-right: 200px;
+    margin-left: 310px;
+    border: 1px solid rgb(17, 201, 27);
 }
