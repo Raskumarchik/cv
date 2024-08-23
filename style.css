@@ -1,238 +1,227 @@
-body{
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.block {
-    width: 37%;
-    height: 93vh;  /* почему нельзя поставить 100% ? */
+.container {
     background:rgb(44, 43, 43);
     position: relative;
-    margin-left: auto;  /* найти центр блока */
-    margin-right: auto;
-    top: 5px ;
-    padding-left: 20px; /*для сдвига всех элементов в блоке*/
-    padding-top: 40px; 
+    width: 100%;
+    height: 100%;
+    max-width: 1280px;
+    align-content: flex-start;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 24px;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
-.main{
-    line-height: 10px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    margin-right: 420px;
-    border: 1px solid red;
-    
+/* Стили для aside */
+.sidebar {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    background-color: rgb(44, 43, 43);
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 380px;
+    box-sizing: border-box;
+    color: white;
 }
 
-.img_1:hover{
-    transform: scale(1.5); 
-    border: 5px solid rgb(43, 204, 177);
-
-}
-.img_1{
-    border: 5px solid rgb(43, 204, 177);
-    transition: transform 0.5s;
-    border: 1px solid red;
-
+/* Профильный блок */
+.intro {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: start;
+    gap: 8px;
 }
 
-.type_contacts {
-    position: absolute;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;  
-    transition: 0.2s; 
-    border: 1px solid red;
+/* Стиль для изображения профиля */
+.profile-image {
+    width: 130px;
+    height: 130px;
 }
 
+/* Стили для заголовков */
+.intro h2, .intro h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Контактная информация */
 .contacts {
-    margin-right:420px;
-    transition: transform 0.5s;
-    float: right;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    border: 1px solid red;
-}
-
-.contacts:hover{
-    transform: scale(1.1); 
-}
-
-.vertical_line{
-    width: 3px;
-    height: 800px;
-    background-color: rgb(58, 57, 57);
-    margin-left: 300px; /*Центр*/
-    transform: rotate(180deg);    /*Повернуть вертикально */
-    transform: translateY(-600px);
-}
-
-.profile_information{
-    margin-top: 10px;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    line-height: 16px;
-    margin-right:420px;
-    border: 1px solid red;
-}
-.profile{
-    margin-top: 130px;
-    margin-right:420px;
-    color: rgb(255, 255, 255);
-    border: 1px solid red; 
- 
-     
-}
-.gorizont_line{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-
-}
-
-.container{
-    margin-right:420px;
-    margin-top: 5px;
-    grid-template-columns:minmax(25px, 290px);/*размер колонок*/
     display: grid;
-    grid-auto-rows:minmax(1px, auto) ;
-    border: 1px solid red;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 8px;
+    align-items: center;
+    justify-content: center;
 }
 
-.items{
-
-    color: rgb(255, 255, 255);
+/* Контактные элементы */
+.contact-item {
+    display: contents;
 }
 
-.item_2{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-    
+.contact-label {
+    font-weight: bold;
 }
 
-.container_2{
-    margin-top: 25px;
-    grid-template-columns: 125px 145px;/*размер колонок*/
-    grid-auto-rows: 30px;/*размер для незаданных строк */
+.contact-value {
+    word-wrap: break-word;
+}
+
+.contacts a {
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+.profile {
     display: grid;
-    margin-right:420px;
-    border: 1px solid red;
+    grid-template-rows: auto auto auto; /* Заголовок, линия, текст */
+    gap: 4px; /* Вертикальный отступ между элементами */
+    color: white;
+    justify-content: left;
 }
 
-.item{
-    color: rgb(255, 255, 255);
-   
-
+/* Заголовок профиля */
+.profile h2 {
+    margin: 0;
 }
 
-.item_4{
-
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
+/* Разделительная линия */
+.gorizont_line {
+    text-align: left;
+    width: 100px;
+    height: 3px;
+    background-color: #90ee90;
+    margin: 0 0 4px 0; /* Убираем боковые отступы и добавляем отступ снизу */
+    border: none;
 }
 
-.item_6{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
+.profile p {
+    margin: 0;
+    padding: 0;
 }
 
-.item_8{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 rgb(43, 204, 177),
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
+/* Основной стиль для секции */
+.technical_skills {
+    margin: 20px 0;
+    color: white;
 }
 
-.item_10{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
+/* Стили для заголовка */
+.technical_skills h2 {
+    margin-bottom: 16px;
 }
 
-.item_12{
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_14{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.experience{
-    color: rgb(255, 255, 255);
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
+/* Стили для списка скиллов */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
     display: grid;
-    justify-content: start;
-    margin-top: -930px;
-    margin-right: 20px;
-    margin-left: 310px; 
-    border: 3px solid rgb(24, 15, 138); 
-     
-
+    grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+    gap: 12px;
 }
 
-.item_16{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-
-}
-
-.item_17{
-    font-size: 12px;
-    border: 1px solid rgb(17, 79, 136);
-}
-
-.exp{
-    
-    color: rgb(255, 255, 255);
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
-    justify-content: start;
+.skill-item {
     display: grid;
-    margin-top: 1%;
-    margin-right: 200px;
-    margin-left: 310px;
-    border: 1px solid rgb(17, 201, 27);
+    grid-template-columns: 1fr auto; /* Название скилла и рейтинги */
+    align-items: center;
+    gap: 8px; /* Отступ между названием и рейтингом */
+}
+
+.skill-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.skill-rating {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 колонок для кружочков */
+    gap: 4px; /* Отступы между кружочками */
+}
+
+
+.circle {
+    width: 16px; /* Высота и ширина */
+    height: 16px;
+    background-color: #90ee90; /* Нежный зеленый цвет */
+    border-radius: 50%; /* Круглая форма */
+}
+
+
+/* Основной стиль для секции опыта работы */
+.experience {
+    margin: 0;
+    color: white;
+}
+
+/* Заголовок секции */
+.experience-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+/* Горизонтальная линия */
+.gorizont_line {
+    width: 100px;
+    height: 1px;
+    background-color: #90ee90; /* Нежный зеленый цвет */
+    margin: 0 0 16px 0;
+    border: none;
+}
+
+/* Стили для блока работы */
+.job {
+    margin-top: 16px;
+}
+
+/* Стили для заголовка и даты */
+.job-header {
+    display: flex;
+    justify-content: space-between; /* Размещаем заголовок и дату по краям */
+    align-items: center;
+    padding: 8px;
+}
+
+/* Название работы (позиции) */
+.job-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Дата работы */
+.job-duration {
+    font-size: 14px;
+    color: #404440;
+    margin: 0;
+}
+
+/* Список задач */
+.job-tasks {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+/* Элементы списка задач */
+.task-item {
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* Белые маркеры для элементов списка */
+.job-tasks .task-item::marker {
+    color: white; /* Цвет маркера */
 }
