@@ -27,11 +27,9 @@ html, body {
     display: grid;
     grid-template-rows: auto auto;
     gap: 20px;
+    max-width: 340px;
     background-color: rgb(44, 43, 43);
-    padding: 20px;
-    width: 100%;
     margin: 0 auto;
-    max-width: 380px;
     box-sizing: border-box;
     color: white;
 }
@@ -164,7 +162,9 @@ html, body {
 /* Основной стиль для секции опыта работы */
 .experience {
     margin: 0;
+    padding-left: 16px;
     color: white;
+    border-left: 3px solid #555555;
 }
 
 /* Заголовок секции */
@@ -225,3 +225,4 @@ html, body {
 .job-tasks .task-item::marker {
     color: white; /* Цвет маркера */
 }
+
