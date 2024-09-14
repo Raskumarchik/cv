@@ -1,238 +1,345 @@
-body{
+html, body {
+    margin: 0; /*Устанавливает внешние отступы*/
+    padding: 0; /*Устанавливает внутренние отступы*/
+    display: flex; /*Устанавливает элемент как контейнер flexbox*/
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
     background: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.block {
-    width: 37%;
-    height: 93vh;  /* почему нельзя поставить 100% ? */
-    background:rgb(44, 43, 43);
-    position: relative;
-    margin-left: auto;  /* найти центр блока */
-    margin-right: auto;
-    top: 5px ;
-    padding-left: 20px; /*для сдвига всех элементов в блоке*/
-    padding-top: 40px; 
+.container {
+    background: rgb(44, 43, 43);
+    position: relative; /*устанавливает элемент в относительное позиционирование относительно его нормального потока*/
+    width: 100%;
+    height: 100%;
+    max-width: 1280px; /*Максимальная ширина*/
+    align-content: flex-start; /*Выравниваются к началу*/
+    display: grid;
+    grid-template-columns: 340px 1fr; /*Определения структуры колонок в грид-контейнере*/
+    gap: 35px; /*Установка расстояния между элементами внутри контейнера*/
+    padding: 24px;
 }
 
-.main{
-    line-height: 10px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    margin-right: 420px;
-    border: 1px solid red;
-    
+/* Стили для aside */
+.sidebar {
+    display: grid;
+    grid-template-rows: auto auto; /*сетка будет состоять из двух строк, и высота каждой строки будет автоматически определяться*/
+    gap: 20px;
+    background-color: rgb(44, 43, 43);
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto; /*центрирования блоков по горизонтали в контейнере*/
+    max-width: 380px;
+    box-sizing: border-box; /*определяет, как ширина и высота элемента учитывают внутренние отступы и границы.*/
+    color: white;
 }
 
-.img_1:hover{
-    transform: scale(1.5); 
-    border: 5px solid rgb(43, 204, 177);
-
-}
-.img_1{
-    border: 5px solid rgb(43, 204, 177);
-    transition: transform 0.5s;
-    border: 1px solid red;
-
+/* Профильный блок */
+.intro {
+    display: grid;
+    grid-template-columns: auto; /*определения структуры колонок в сетке*/
+    justify-items: start;
+    gap: 8px;
 }
 
-.type_contacts {
-    position: absolute;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;  
-    transition: 0.2s; 
-    border: 1px solid red;
+/* Стиль для изображения профиля */
+.profile-image {
+    width: 130px;
+    height: 130px;
 }
 
+/* Стили для заголовков */
+.intro h2, .intro h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Контактная информация */
 .contacts {
-    margin-right:420px;
-    transition: transform 0.5s;
-    float: right;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*определения структуры колонок в сетке*/
+    gap: 4px 8px;
+    align-items: center; /*управляет выравниванием элементов внутри ячеек сетки по вертикали*/
+    justify-content: center; /* Центрирует элементы по горизонтали */
 }
 
-.contacts:hover{
-    transform: scale(1.1); 
+/* Контактные элементы */
+.contact-item {
+    display: contents; /* позволяет элементу исчезнуть из визуального потока, при этом сохраняя его дочерние элементы*/
 }
 
-.vertical_line{
-    width: 3px;
-    height: 800px;
-    background-color: rgb(58, 57, 57);
-    margin-left: 300px; /*Центр*/
-    transform: rotate(180deg);    /*Повернуть вертикально */
-    transform: translateY(-600px);
+.contact-label {
+    font-weight: bold; /*Шрифт жирный*/
 }
 
-.profile_information{
-    margin-top: 10px;
-    line-height: 30px; /*межстрочный интервал*/
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    line-height: 16px;
-    margin-right:420px;
-    border: 1px solid red;
+.contact-value {
+    color: #90ee90;
+    word-wrap: break-word; /* Разрывать слова при необходимости */
 }
+
+.contacts a {
+    text-decoration: none; /*используется для удаления текстовых украшений, таких как подчеркивание*/
+}
+
+.contacts a:hover { /*это псевдокласс, который применяет стили к ссылкам, когда на них наводят курсор мыши.*/
+    text-decoration: underline;/*Это правило добавит подчеркивание к гиперссылкам*/
+}
+
 .profile{
-    margin-top: 130px;
-    margin-right:420px;
-    color: rgb(255, 255, 255);
-    border: 1px solid red; 
- 
-     
-}
-.gorizont_line{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-
-}
-
-.container{
-    margin-right:420px;
-    margin-top: 5px;
-    grid-template-columns:minmax(25px, 290px);/*размер колонок*/
     display: grid;
-    grid-auto-rows:minmax(1px, auto) ;
-    border: 1px solid red;
+    grid-template-rows: auto auto auto; /* Заголовок, линия, текст */
+    gap: 4px; /* Вертикальный отступ между элементами */
+    color: white;
+    justify-content: left;
 }
 
-.items{
-
-    color: rgb(255, 255, 255);
+/* Заголовок профиля */
+.profile h2 {
+    font-size: 30px;
+    margin: 0;
 }
 
-.item_2{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-    
+/* Разделительная линия */
+.gorizont_line {
+    text-align: left;
+    width: 100px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #90ee90;
+    margin: 0 0 4px 0; /* Убираем боковые отступы и добавляем отступ снизу */
+    border: none; /*для удаления всех границ у элемента*/
 }
 
-.container_2{
-    margin-top: 25px;
-    grid-template-columns: 125px 145px;/*размер колонок*/
-    grid-auto-rows: 30px;/*размер для незаданных строк */
+.profile p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Основной стиль для секции */
+.technical_skills {
+    margin: 20px 0; /*Внешние отступы сверху и снизу (20px) и справа слева (0px)*/
+    color: white;
+}
+
+/* Стили для заголовка */
+.technical_skills h2 {
+    font-size: 30px;
+    margin-bottom: 16px; /*Отступ снизу*/
+}
+
+/* Стили для списка скиллов */
+.skills-list {
+    list-style: none;/*управляет отображением маркеров и нумерации элементов списка. Значение none указывает, что маркеры (или номера) не должны отображаться.*/
+    padding: 0;
+    margin: 16px 0 0; /*сверху, саправа, снизу*/
     display: grid;
-    margin-right:420px;
-    border: 1px solid red;
+    grid-template-columns: 1fr; /* Одна колонка для маленьких экранов */
+    gap: 12px; /* Расстояние между элементами */
 }
 
-.item{
-    color: rgb(255, 255, 255);
-   
-
-}
-
-.item_4{
-
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_6{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_8{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 rgb(43, 204, 177),
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_10{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_12{
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.item_14{
-    background-color: rgb(44, 43, 43);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    box-shadow: 15px 0px 0 0 rgb(43, 204, 177),
-                40px 0px 0 0 gray,
-                65px 0px 0 0 gray,
-                90px 0px 0 0 gray,
-                115px 0px 0 0 gray;
-}
-
-.experience{
-    color: rgb(255, 255, 255);
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
+.skill-item {
     display: grid;
-    justify-content: start;
-    margin-top: -930px;
-    margin-right: 20px;
-    margin-left: 310px; 
-    border: 3px solid rgb(24, 15, 138); 
-     
-
+    grid-template-columns: 1fr auto; /* Название скилла и рейтинги */
+    align-items: center;
+    gap: 8px; /* Отступ между названием и рейтингом */
 }
 
-.item_16{
-    width:70px;
-    border-bottom:4px solid rgb(43, 204, 177);
-    border-radius: 5px;
-
+.skill-name {
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.item_17{
-    font-size: 12px;
-    border: 1px solid rgb(17, 79, 136);
-}
-
-.exp{
-    
-    color: rgb(255, 255, 255);
-    grid-template-columns: auto;
-    grid-auto-rows: auto;
-    justify-content: start;
+.skill-rating {
     display: grid;
-    margin-top: 1%;
-    margin-right: 200px;
-    margin-left: 310px;
-    border: 1px solid rgb(17, 201, 27);
+    grid-template-columns: repeat(5, 1fr); /* 5 колонок для кружочков */
+    gap: 4px; /* Отступы между кружочками */
+}
+
+.circle {
+    width: 16px; /* Высота и ширина */
+    height: 16px;
+    background-color: #90ee90;
+    border-radius: 50%; /* Круглая форма */
+}
+
+/* Основной стиль для секции опыта работы */
+.experience {
+    margin: 10px;
+    color: white;
+}
+
+/* Заголовок секции */
+.experience-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+/* Горизонтальная линия */
+.gorizont_line {
+    width: 100px;
+    height: 1px;
+    background-color: #90ee90; /* Нежный зеленый цвет */
+    margin: 0 0 16px 0;
+    border: none;
+}
+
+/* Стили для блока работы */
+.job {
+    margin-top: 16px;
+}
+/* Стили для заголовка и даты */
+.job-header {
+    display: flex;
+    justify-content: space-between; /* Размещаем заголовок и дату по краям */
+    align-items: center;
+    padding: 8px;
+}
+
+/* Название работы (позиции) */
+.job-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Дата работы */
+.job-duration {
+    font-size: 14px;
+    color: #404440;
+    margin: 0;
+}
+
+/* Список задач */
+.job-tasks {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding: 0;
+}
+
+/* Элементы списка задач */
+.task-item {
+    margin-bottom: 8px;
+    color: white;
+}
+
+/* Белые маркеры для элементов списка */
+.job-tasks .task-item::marker {
+    color: white; /* Цвет маркера */
+}
+
+.education {
+    margin: 0;
+    color: white;
+}
+
+.education-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.educat {
+    margin-top: 16px;
+}
+
+.educat-header {
+    display: flex;
+    justify-content: space-between; /* Размещаем заголовок и дату по краям */
+    align-items: center;
+    padding: 8px;
+}
+
+/* Название работы (позиции) */
+.educat-title {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Дата работы */
+.educat-duration {
+    font-size: 14px;
+    color: #404440;
+    margin: 0;
+}
+
+.educat-title{
+    font-size: 16px;
+    margin: 0;
+}
+
+.educat-country {
+    font-size: 14px;
+    margin: 0;
+    margin-left: 10px;
+}
+.educat-2-header {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between; /* Размещаем заголовок и дату по краям */
+    align-items: center;
+    padding: 8px;
+}
+
+.interest {
+    margin: 0;
+    color: white;
+}
+.interest-title{
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.shape-container {
+    display: flex;
+    gap: 24px;
+}
+
+.circle2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #90ee90;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #90ee90;
+}
+
+.rectangle {
+    width: 150px;
+    height: 100px;
+    background-color: #90ee90;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #90ee90;
+    position: relative;
+}
+
+.references{
+    margin: 0;
+    color: white;
+}
+
+.references-title{
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.references-item{
+    font-size: 14px;
+    margin: 0;
+    line-height: 4px;
+}
+
+.references-item2{
+    padding-top: 8px;
+    font-size: 14px;
+    margin: 0;
+    line-height: 4px;
 }
